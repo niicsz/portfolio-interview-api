@@ -1,0 +1,9 @@
+interview:
+  allowed-origins: https://portfolio.example.com
+  llm:
+    api-key: test-key
+  rate-limit:
+    per-client-per-minute: 2
+    per-client-per-day: 10
+    global-per-day: 100
+    trusted-proxy-hops: 1
