@@ -3,7 +3,6 @@ package com.binitech.interview.adapters.outbound.llm;
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.errors.AnthropicInvalidDataException;
 import com.anthropic.models.messages.MessageCreateParams;
-import com.anthropic.models.messages.OutputConfig;
 import com.anthropic.models.messages.StopReason;
 import com.anthropic.models.messages.StructuredMessage;
 import com.anthropic.models.messages.StructuredMessageCreateParams;
@@ -34,10 +33,13 @@ public class ClaudeScopeClassifierAdapter implements ScopeClassifierPort {
 
   private final AnthropicClient client;
   private final String model;
+  private final StructuredOutputConfig<ScopeClassification> outputConfig;
 
   public ClaudeScopeClassifierAdapter(AnthropicClient client, InterviewProperties properties) {
     this.client = client;
     this.model = properties.llm().classifierModel();
+    this.outputConfig =
+        ClaudeCalls.outputConfig(ScopeClassification.class, properties.llm().effort());
   }
 
   @Override
@@ -47,11 +49,7 @@ public class ClaudeScopeClassifierAdapter implements ScopeClassifierPort {
             .model(model)
             .maxTokens(MAX_TOKENS)
             .system(InterviewPrompts.CLASSIFIER_SYSTEM_PROMPT)
-            .outputConfig(
-                StructuredOutputConfig.<ScopeClassification>builder()
-                    .format(ScopeClassification.class)
-                    .effort(OutputConfig.Effort.LOW)
-                    .build())
+            .outputConfig(outputConfig)
             .addUserMessage(InterviewPrompts.classifierUserMessage(question))
             .build();
 

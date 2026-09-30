@@ -3,7 +3,6 @@ package com.binitech.interview.adapters.outbound.llm;
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.errors.AnthropicInvalidDataException;
 import com.anthropic.models.messages.MessageCreateParams;
-import com.anthropic.models.messages.OutputConfig;
 import com.anthropic.models.messages.StopReason;
 import com.anthropic.models.messages.StructuredMessage;
 import com.anthropic.models.messages.StructuredMessageCreateParams;
@@ -43,12 +42,14 @@ public class ClaudeAnswerGeneratorAdapter implements AnswerGeneratorPort {
 
   private final AnthropicClient client;
   private final String model;
+  private final StructuredOutputConfig<AnswerDraft> outputConfig;
   private final String systemPrompt;
   private final PromptLeakDetector leakDetector;
 
   public ClaudeAnswerGeneratorAdapter(AnthropicClient client, InterviewProperties properties) {
     this.client = client;
     this.model = properties.llm().model();
+    this.outputConfig = ClaudeCalls.outputConfig(AnswerDraft.class, properties.llm().effort());
     byte[] random = new byte[12];
     new SecureRandom().nextBytes(random);
     String canary = "CNR-" + HexFormat.of().formatHex(random);
@@ -63,11 +64,7 @@ public class ClaudeAnswerGeneratorAdapter implements AnswerGeneratorPort {
             .model(model)
             .maxTokens(MAX_TOKENS)
             .system(systemPrompt)
-            .outputConfig(
-                StructuredOutputConfig.<AnswerDraft>builder()
-                    .format(AnswerDraft.class)
-                    .effort(OutputConfig.Effort.LOW)
-                    .build())
+            .outputConfig(outputConfig)
             .addUserMessage(InterviewPrompts.answerUserMessage(question, context))
             .build();
 

@@ -35,7 +35,8 @@ public record InterviewProperties(
       @NotBlank String model,
       @NotBlank String classifierModel,
       @NotNull Duration timeout,
-      @Min(0) int maxRetries) {}
+      @Min(0) int maxRetries,
+      String effort) {}
 
   public record RateLimit(
       @Min(1) int perClientPerMinute,

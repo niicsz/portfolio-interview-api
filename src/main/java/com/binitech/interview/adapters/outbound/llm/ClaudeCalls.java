@@ -4,7 +4,10 @@ import com.anthropic.errors.AnthropicInvalidDataException;
 import com.anthropic.errors.AnthropicIoException;
 import com.anthropic.errors.AnthropicServiceException;
 import com.anthropic.errors.RateLimitException;
+import com.anthropic.models.messages.OutputConfig;
+import com.anthropic.models.messages.StructuredOutputConfig;
 import com.binitech.interview.domain.exception.LanguageModelUnavailableException;
+import java.util.Locale;
 import java.util.function.Supplier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +18,18 @@ final class ClaudeCalls {
   private static final Logger log = LoggerFactory.getLogger(ClaudeCalls.class);
 
   private ClaudeCalls() {}
+
+  /**
+   * Saída estruturada com o effort configurado. Effort vazio não envia o parâmetro, o que é
+   * necessário para modelos que não o aceitam, como o Haiku 4.5.
+   */
+  static <T> StructuredOutputConfig<T> outputConfig(Class<T> type, String effort) {
+    StructuredOutputConfig.Builder<T> builder = StructuredOutputConfig.<T>builder().format(type);
+    if (effort != null && !effort.isBlank()) {
+      builder.effort(OutputConfig.Effort.of(effort.strip().toLowerCase(Locale.ROOT)));
+    }
+    return builder.build();
+  }
 
   static <T> T execute(Supplier<T> call) {
     try {
