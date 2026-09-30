@@ -1,0 +1,25 @@
+target/
+.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+*.log
+
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+.DS_Store
+Thumbs.db
+
+.env
+.env.*
+!.env.example
+
+# Claude Code tooling (não faz parte do app)
+.claude/
+
+# Modelo de embeddings (baixado por scripts/download-embedding-model.sh)
+/models/

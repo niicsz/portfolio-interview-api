@@ -1,0 +1,113 @@
+openapi: 3.0.3
+info:
+  title: Portfolio Interview API
+  description: |
+    API do "Interview me" do portfólio do Nicolas Bezerra Bini.
+    Responde perguntas sobre a carreira, experiências, projetos e stack do Nicolas
+    usando RAG sobre uma base de conhecimento curada. Perguntas fora desse escopo
+    são recusadas.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080
+    description: Servidor local de desenvolvimento
+
+tags:
+  - name: Interview
+    description: Perguntas e respostas sobre a carreira do Nicolas
+
+paths:
+  /api/interview/questions:
+    post:
+      tags: [Interview]
+      summary: Fazer uma pergunta sobre a carreira do Nicolas
+      description: |
+        Cada requisição é independente (sem histórico de conversa enviado pelo cliente),
+        o que impede que o cliente forje turnos anteriores do assistente.
+      operationId: askQuestion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionRequestDTO'
+      responses:
+        '200':
+          description: |
+            Pergunta processada. O campo `status` indica se ela foi respondida,
+            se estava fora do escopo ou se foi rejeitada pelas proteções.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnswerResponseDTO'
+        '400':
+          description: Pergunta inválida (vazia, curta ou longa demais)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDTO'
+        '429':
+          description: Limite de perguntas excedido
+          headers:
+            Retry-After:
+              description: Segundos até uma nova pergunta ser aceita
+              schema:
+                type: integer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDTO'
+        '503':
+          description: Modelo de linguagem indisponível no momento
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDTO'
+
+components:
+  schemas:
+    QuestionRequestDTO:
+      type: object
+      required: [question]
+      properties:
+        question:
+          type: string
+          minLength: 3
+          maxLength: 500
+          description: Pergunta sobre a carreira, experiências, projetos ou stack do Nicolas
+          example: Quais tecnologias o Nicolas usou no Btoken?
+
+    AnswerResponseDTO:
+      type: object
+      required: [status, answer, sources]
+      properties:
+        status:
+          $ref: '#/components/schemas/AnswerStatusDTO'
+        answer:
+          type: string
+          description: Resposta em texto simples (ou mensagem padrão de recusa)
+        sources:
+          type: array
+          description: Documentos da base de conhecimento usados na resposta
+          items:
+            type: string
+
+    AnswerStatusDTO:
+      type: string
+      description: |
+        - `ANSWERED`: respondida com base na base de conhecimento
+        - `OUT_OF_SCOPE`: pergunta fora do escopo da carreira do Nicolas
+        - `REJECTED`: pergunta bloqueada pelas proteções contra prompt injection
+      enum: [ANSWERED, OUT_OF_SCOPE, REJECTED]
+
+    ErrorDTO:
+      type: object
+      required: [status, message, timestamp]
+      properties:
+        status:
+          type: integer
+        message:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
