@@ -1,0 +1,7 @@
+.git
+target
+models
+.idea
+.vscode
+*.md
+!src/main/resources/knowledge/*.md
