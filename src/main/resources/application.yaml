@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: Portfolio Interview API
+  threads:
+    virtual:
+      enabled: true
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: ${PORT:8080}
+  shutdown: graceful
+  error:
+    include-message: never
+    include-stacktrace: never
+  tomcat:
+    max-swallow-size: 16KB
+    max-http-form-post-size: 16KB
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+interview:
+  allowed-origins: ${INTERVIEW_ALLOWED_ORIGINS:http://localhost:4200}
+  max-answer-chars: 1500
+  retrieval:
+    top-k: ${INTERVIEW_TOP_K:6}
+    min-relevance: ${INTERVIEW_MIN_RELEVANCE:0.75}
+    max-chunk-chars: 1200
+  embedding:
+    model-path: ${EMBEDDING_MODEL_PATH:models/multilingual-e5-small/model_quantized.onnx}
+    tokenizer-path: ${EMBEDDING_TOKENIZER_PATH:models/multilingual-e5-small/tokenizer.json}
+  llm:
+    api-key: ${ANTHROPIC_API_KEY}
+    model: ${ANTHROPIC_MODEL:claude-opus-5-5}
+    classifier-model: ${ANTHROPIC_CLASSIFIER_MODEL:${ANTHROPIC_MODEL:claude-opus-5-5}}
+    timeout: ${ANTHROPIC_TIMEOUT:30s}
+    max-retries: ${ANTHROPIC_MAX_RETRIES:1}
+  rate-limit:
+    per-client-per-minute: ${RATE_LIMIT_PER_MINUTE:5}
+    per-client-per-day: ${RATE_LIMIT_PER_DAY:30}
+    global-per-day: ${RATE_LIMIT_GLOBAL_PER_DAY:300}
+    trusted-proxy-hops: ${TRUSTED_PROXY_HOPS:1}
