@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-# Baixa o multilingual-e5-small (ONNX quantizado) fixado em um commit e confere o SHA-256.
 set -eu
 
 REPO="Xenova/multilingual-e5-small"

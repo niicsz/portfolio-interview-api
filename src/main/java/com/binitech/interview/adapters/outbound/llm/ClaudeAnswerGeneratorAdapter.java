@@ -21,11 +21,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-/**
- * Gera a resposta a partir do contexto recuperado. O system prompt carrega um código canário
- * aleatório (novo a cada subida); se ele ou um trecho do prompt aparecer na resposta, a resposta é
- * descartada.
- */
 @Component
 public class ClaudeAnswerGeneratorAdapter implements AnswerGeneratorPort {
 

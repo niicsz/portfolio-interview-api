@@ -16,11 +16,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-/**
- * Classifica a pergunta com saída estruturada: o modelo só pode devolver um dos valores do enum.
- * Mesmo que a pergunta contenha uma injeção bem-sucedida, ela não consegue fazer este passo
- * produzir texto livre. Qualquer resposta inesperada é tratada como fora do escopo (fail closed).
- */
 @Component
 public class ClaudeScopeClassifierAdapter implements ScopeClassifierPort {
 

@@ -11,13 +11,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-/**
- * Embeddings locais com o multilingual-e5-small (ONNX), que entende português e inglês. Roda dentro
- * da própria JVM: nenhuma chave de API extra e nenhum dado da base sai do servidor.
- *
- * <p>A família E5 foi treinada com os prefixos "query: " e "passage: ", e a similaridade cai
- * bastante sem eles.
- */
 @Component
 public class OnnxEmbeddingAdapter implements EmbeddingPort {
 

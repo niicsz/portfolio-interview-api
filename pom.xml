@@ -51,7 +51,6 @@
 			<version>${anthropic-java.version}</version>
 		</dependency>
 
-		<!-- Embeddings locais (ONNX Runtime): sem chave de API extra -->
 		<dependency>
 			<groupId>dev.langchain4j</groupId>
 			<artifactId>langchain4j-embeddings</artifactId>
@@ -119,7 +118,6 @@
 				<artifactId>fmt-maven-plugin</artifactId>
 				<version>2.25</version>
 				<dependencies>
-					<!-- versão com suporte a JDK 25 -->
 					<dependency>
 						<groupId>com.google.googlejavaformat</groupId>
 						<artifactId>google-java-format</artifactId>

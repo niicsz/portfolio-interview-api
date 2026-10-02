@@ -4,13 +4,6 @@ import com.binitech.interview.domain.Question;
 import com.binitech.interview.domain.knowledge.KnowledgeChunk;
 import java.util.List;
 
-/**
- * Prompts do classificador e do gerador.
- *
- * <p>Tudo o que vem do visitante entra só na mensagem de usuário, dentro de {@code <pergunta>} e
- * com {@code <}, {@code >} e {@code &} escapados, então a pergunta não consegue fechar a tag nem
- * abrir uma nova seção. As instruções ficam no system prompt, que o visitante nunca edita.
- */
 final class InterviewPrompts {
 
   static final String CLASSIFIER_SYSTEM_PROMPT =

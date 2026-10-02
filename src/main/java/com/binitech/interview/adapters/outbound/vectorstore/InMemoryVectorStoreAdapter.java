@@ -9,11 +9,6 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.stereotype.Component;
 
-/**
- * Vector store em memória. A base tem poucas dezenas de trechos e é reindexada a cada subida, então
- * busca exata por força bruta é mais simples e rápida do que um banco vetorial. Para crescer, basta
- * trocar este adaptador por um de pgvector.
- */
 @Component
 public class InMemoryVectorStoreAdapter implements VectorStorePort {
 

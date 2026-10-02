@@ -7,10 +7,6 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-/**
- * Detecta se uma resposta vazou o system prompt: pelo código canário ou por qualquer sequência de
- * {@value #SHINGLE_SIZE} palavras copiada do prompt.
- */
 final class PromptLeakDetector {
 
   private static final int SHINGLE_SIZE = 6;

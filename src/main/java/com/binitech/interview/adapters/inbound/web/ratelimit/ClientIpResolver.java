@@ -2,13 +2,6 @@ package com.binitech.interview.adapters.inbound.web.ratelimit;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-/**
- * Descobre o IP do cliente atrás do proxy do Railway.
- *
- * <p>Cada proxy acrescenta o IP de quem o chamou ao final do X-Forwarded-For. Os valores à esquerda
- * vêm do próprio cliente e podem ser forjados, então o IP confiável é o que está {@code
- * trustedProxyHops} posições a partir da direita.
- */
 public class ClientIpResolver {
 
   private final int trustedProxyHops;

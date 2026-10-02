@@ -17,17 +17,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Pipeline de uma pergunta, da camada mais barata para a mais cara:
- *
- * <ol>
- *   <li>normalização e validação da pergunta;
- *   <li>heurísticas de prompt injection (sem custo);
- *   <li>limiar de relevância do RAG: sem trecho relevante, nem chama o modelo;
- *   <li>classificador de escopo com saída restrita a um enum;
- *   <li>geração da resposta só com o contexto recuperado, com verificação de vazamento na saída.
- * </ol>
- */
 public class AskQuestionUseCase implements AskQuestionUseCasePort {
 
   private static final Logger log = LoggerFactory.getLogger(AskQuestionUseCase.class);

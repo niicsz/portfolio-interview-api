@@ -9,12 +9,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-/**
- * CORS como filtro, antes do rate limit, para que o navegador consiga ler também as respostas 429.
- *
- * <p>CORS só restringe navegadores; quem chama a API direto (curl, scripts) é contido pelo rate
- * limit.
- */
 @Configuration
 public class CorsConfig {
 

@@ -25,7 +25,7 @@ public class InterviewController implements InterviewApi {
 
   @Override
   public ResponseEntity<AnswerResponseDTO> askQuestion(QuestionRequestDTO questionRequestDTO) {
-    // O texto da pergunta não é logado: é conteúdo arbitrário de terceiros.
+
     log.debug("Pergunta recebida com {} caracteres", questionRequestDTO.getQuestion().length());
     Answer answer = askQuestionUseCase.ask(questionRequestDTO.getQuestion());
     log.info("Pergunta processada: status={}", answer.status());

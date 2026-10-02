@@ -12,17 +12,12 @@ import java.util.function.Supplier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/** Traduz as falhas do SDK da Anthropic para a exceção de domínio. */
 final class ClaudeCalls {
 
   private static final Logger log = LoggerFactory.getLogger(ClaudeCalls.class);
 
   private ClaudeCalls() {}
 
-  /**
-   * Saída estruturada com o effort configurado. Effort vazio não envia o parâmetro, o que é
-   * necessário para modelos que não o aceitam, como o Haiku 4.5.
-   */
   static <T> StructuredOutputConfig<T> outputConfig(Class<T> type, String effort) {
     StructuredOutputConfig.Builder<T> builder = StructuredOutputConfig.<T>builder().format(type);
     if (effort != null && !effort.isBlank()) {

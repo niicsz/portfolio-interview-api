@@ -46,12 +46,11 @@ interview:
     tokenizer-path: ${EMBEDDING_TOKENIZER_PATH:models/multilingual-e5-small/tokenizer.json}
   llm:
     api-key: ${ANTHROPIC_API_KEY}
-    model: ${ANTHROPIC_MODEL:claude-opus-5-5}
-    classifier-model: ${ANTHROPIC_CLASSIFIER_MODEL:${ANTHROPIC_MODEL:claude-opus-5-5}}
+    model: ${ANTHROPIC_MODEL:claude-haiku-4-5}
+    classifier-model: ${ANTHROPIC_CLASSIFIER_MODEL:${ANTHROPIC_MODEL:claude-haiku-4-5}}
     timeout: ${ANTHROPIC_TIMEOUT:30s}
     max-retries: ${ANTHROPIC_MAX_RETRIES:1}
-    # low | medium | high; vazio desliga (ex.: claude-haiku-4-5 não aceita effort)
-    effort: ${ANTHROPIC_EFFORT:low}
+    effort: ${ANTHROPIC_EFFORT:}
   rate-limit:
     per-client-per-minute: ${RATE_LIMIT_PER_MINUTE:5}
     per-client-per-day: ${RATE_LIMIT_PER_DAY:30}

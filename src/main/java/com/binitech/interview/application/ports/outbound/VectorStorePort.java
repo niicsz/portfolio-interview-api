@@ -10,6 +10,5 @@ public interface VectorStorePort {
 
   void replaceAll(Map<KnowledgeChunk, Embedding> chunks);
 
-  /** Trechos mais similares, em ordem decrescente de score. */
   List<RetrievedChunk> search(Embedding query, int topK);
 }

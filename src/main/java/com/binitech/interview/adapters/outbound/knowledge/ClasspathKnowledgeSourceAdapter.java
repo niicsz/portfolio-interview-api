@@ -13,7 +13,6 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Component;
 
-/** Lê os documentos Markdown de {@code classpath:knowledge/}. O título é a primeira linha "# ". */
 @Component
 public class ClasspathKnowledgeSourceAdapter implements KnowledgeSourcePort {
 

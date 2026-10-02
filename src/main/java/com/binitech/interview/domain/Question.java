@@ -4,14 +4,6 @@ import com.binitech.interview.domain.exception.InvalidQuestionException;
 import java.text.Normalizer;
 import java.util.regex.Pattern;
 
-/**
- * Pergunta de um visitante anônimo, já normalizada.
- *
- * <p>A normalização NFKC desfaz truques de ofuscação (letras de largura total, ligaduras), e a
- * remoção de caracteres de controle/formatação elimina texto invisível (zero-width, overrides
- * bidirecionais). Quebras de linha viram espaço para que a pergunta não consiga simular estrutura
- * de prompt ("SYSTEM:" em uma linha própria).
- */
 public final class Question {
 
   public static final int MIN_LENGTH = 3;

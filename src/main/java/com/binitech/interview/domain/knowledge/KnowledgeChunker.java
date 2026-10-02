@@ -3,11 +3,6 @@ package com.binitech.interview.domain.knowledge;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Divide documentos Markdown em trechos por seção ({@code ##}). Seções longas são quebradas por
- * parágrafo. Cada trecho carrega o título do documento e da seção, para que o embedding e o modelo
- * saibam de onde ele veio mesmo isolado.
- */
 public final class KnowledgeChunker {
 
   private final int maxChunkChars;

@@ -21,11 +21,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-/**
- * Limita perguntas por IP (por minuto e por dia) e no total por dia. O limite global é o teto de
- * gasto: mesmo com muitos IPs, a API nunca faz mais do que {@code globalPerDay} perguntas ao modelo
- * por dia.
- */
 public class RateLimitFilter extends OncePerRequestFilter {
 
   private static final Logger log = LoggerFactory.getLogger(RateLimitFilter.class);
