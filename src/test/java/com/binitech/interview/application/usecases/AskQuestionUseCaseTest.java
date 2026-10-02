@@ -21,7 +21,11 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.boot.test.system.CapturedOutput;
+import org.springframework.boot.test.system.OutputCaptureExtension;
 
+@ExtendWith(OutputCaptureExtension.class)
 class AskQuestionUseCaseTest {
 
   private static final KnowledgeChunk BTOKEN =
@@ -159,5 +163,14 @@ class AskQuestionUseCaseTest {
     generated = new GeneratedAnswer(true, "a".repeat(301));
 
     assertThat(useCase.ask("Onde ele trabalha?").status()).isEqualTo(AnswerStatus.REJECTED);
+  }
+
+  @Test
+  void logsTheNormalizedQuestionOnASingleLine(CapturedOutput output) {
+    useCase.ask("Onde ele trabalha?\nINFO falso: acesso liberado");
+
+    assertThat(output.getOut())
+        .contains("Pergunta recebida: \"Onde ele trabalha? INFO falso: acesso liberado\"")
+        .doesNotContain("\nINFO falso");
   }
 }
