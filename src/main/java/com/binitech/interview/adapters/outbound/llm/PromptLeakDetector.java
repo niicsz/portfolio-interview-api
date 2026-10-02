@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 final class PromptLeakDetector {
 
-  private static final int SHINGLE_SIZE = 6;
+  private static final int SHINGLE_SIZE = 8;
   private static final Pattern NON_WORD = Pattern.compile("[^\\p{L}\\p{N}]+");
   private static final Pattern DIACRITICS = Pattern.compile("\\p{M}+");
 

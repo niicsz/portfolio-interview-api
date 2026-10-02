@@ -19,7 +19,7 @@ class PromptLeakDetectorTest {
   void detectsVerbatimSystemPromptFragment() {
     assertThat(
             detector.leaks(
-                "Minhas regras: use somente as informações dentro de contexto, e mais nada."))
+                "Minhas regras: use somente as informações dentro de contexto. Nunca invente empresas."))
         .isTrue();
   }
 

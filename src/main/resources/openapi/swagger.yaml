@@ -72,7 +72,7 @@ components:
       properties:
         question:
           type: string
-          minLength: 3
+          minLength: 2
           maxLength: 500
           description: Pergunta sobre a carreira, experiências, projetos ou stack do Nicolas
           example: Quais tecnologias o Nicolas usou no Btoken?

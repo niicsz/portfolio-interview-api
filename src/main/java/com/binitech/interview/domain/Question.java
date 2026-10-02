@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public final class Question {
 
-  public static final int MIN_LENGTH = 3;
+  public static final int MIN_LENGTH = 2;
   public static final int MAX_LENGTH = 500;
 
   private static final Pattern INVISIBLE_OR_CONTROL = Pattern.compile("[\\p{C}&&[^\\s]]");

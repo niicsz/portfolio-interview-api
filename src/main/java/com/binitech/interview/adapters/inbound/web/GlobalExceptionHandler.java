@@ -19,7 +19,7 @@ public class GlobalExceptionHandler {
 
   private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-  private static final String INVALID_QUESTION = "A pergunta deve ter entre 3 e 500 caracteres.";
+  private static final String INVALID_QUESTION = "A pergunta deve ter entre 2 e 500 caracteres.";
 
   @ExceptionHandler(InvalidQuestionException.class)
   public ResponseEntity<ErrorDTO> handleInvalidQuestion(InvalidQuestionException e) {
