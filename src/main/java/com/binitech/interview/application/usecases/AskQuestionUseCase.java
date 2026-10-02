@@ -52,6 +52,7 @@ public class AskQuestionUseCase implements AskQuestionUseCasePort {
   @Override
   public Answer ask(String rawQuestion) {
     Question question = Question.of(rawQuestion);
+    log.info("Pergunta recebida: \"{}\"", question.text());
 
     if (injectionDetector.isSuspicious(question)) {
       log.warn("Pergunta rejeitada pelas heurísticas de prompt injection");
