@@ -2,7 +2,7 @@
 
 API do **"Interview me"** do [portfólio](https://github.com/niicsz/portfolio-v2): recrutadores e visitantes fazem perguntas sobre a carreira do Nicolas e recebem respostas geradas pelo **Claude** (Anthropic) com **RAG** sobre uma base de conhecimento curada. Perguntas fora desse escopo e tentativas de **prompt injection** são recusadas.
 
-Desenvolvida com **API first** (contrato OpenAPI → interfaces geradas) e **arquitetura hexagonal**, em **Java 21** e **Spring Boot 3**.
+Desenvolvida com **API first** (contrato OpenAPI → interfaces geradas) e **arquitetura hexagonal**, em **Java 25** e **Spring Boot 3**.
 
 ---
 

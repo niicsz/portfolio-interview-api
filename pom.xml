@@ -15,7 +15,7 @@
 	<description>API "Interview me" do portfólio: RAG sobre a carreira do Nicolas, com Claude e arquitetura hexagonal.</description>
 
 	<properties>
-		<java.version>21</java.version>
+		<java.version>25</java.version>
 		<dependency-check.version>12.1.1</dependency-check.version>
 		<openapi-generator.version>7.25.0</openapi-generator.version>
 		<springdoc.version>2.8.13</springdoc.version>
@@ -141,7 +141,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.12</version>
+				<version>0.8.15</version>
 				<executions>
 					<execution>
 						<id>prepare-agent</id>

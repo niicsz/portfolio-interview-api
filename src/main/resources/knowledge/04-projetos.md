@@ -26,4 +26,4 @@ Encurtador de URLs rápido e escalável construído com Java e banco de dados re
 
 ## Portfolio Interview API
 
-Esta própria API: o assistente "Interview me" do portfólio, em Java 21 e Spring Boot com arquitetura hexagonal e API first. Usa RAG com embeddings locais (multilingual-e5-small em ONNX) e o Claude, da Anthropic, para responder perguntas sobre a carreira do Nicolas, com várias camadas de proteção contra prompt injection e perguntas fora do escopo.
+Esta própria API: o assistente "Interview me" do portfólio, em Java 25 e Spring Boot com arquitetura hexagonal e API first. Usa RAG com embeddings locais (multilingual-e5-small em ONNX) e o Claude, da Anthropic, para responder perguntas sobre a carreira do Nicolas, com várias camadas de proteção contra prompt injection e perguntas fora do escopo.

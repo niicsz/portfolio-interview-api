@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jdk AS backend-build
+FROM eclipse-temurin:25-jdk AS backend-build
 
 WORKDIR /app
 
@@ -12,7 +12,7 @@ COPY src/ src/
 
 RUN ./mvnw package -DskipTests -B
 
-FROM eclipse-temurin:21-jre AS model
+FROM eclipse-temurin:25-jre AS model
 
 WORKDIR /models
 RUN apt-get update && \
@@ -21,7 +21,7 @@ RUN apt-get update && \
 COPY scripts/download-embedding-model.sh /download-embedding-model.sh
 RUN sh /download-embedding-model.sh /models/multilingual-e5-small
 
-FROM eclipse-temurin:21-jre AS runtime
+FROM eclipse-temurin:25-jre AS runtime
 
 WORKDIR /app
 
