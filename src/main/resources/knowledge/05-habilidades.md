@@ -22,4 +22,4 @@ Azure (certificado), AWS, Terraform, Docker, Podman, Linux (WSL e RHEL), Bash e 
 
 ## Observabilidade e testes
 
-Prometheus e Grafana para métricas, k6 para testes de carga, JUnit 5 e Mockito para testes unitários, WireMock e ArchUnit.
+Prometheus e Grafana para métricas, k6 para testes de carga, JUnit 5 e Mockito para testes unitários (95% de cobertura no SonarQube no Btoken), WireMock e ArchUnit.
