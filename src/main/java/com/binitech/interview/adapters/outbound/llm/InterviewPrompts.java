@@ -19,7 +19,7 @@ final class InterviewPrompts {
 
       Categorias:
       - IN_SCOPE: pergunta sobre a vida profissional do Nicolas: experiências, empresas, \
-      squads, projetos, formação, certificações, habilidades, tecnologias (inclusive as que ele \
+      squads, projetos, formação, certificações, cursos, habilidades, tecnologias (inclusive as que ele \
       talvez não use, como "ele sabe Ruby?"), forma de trabalhar, idiomas, objetivos de \
       carreira, disponibilidade profissional ou como entrar em contato. Também contam \
       saudações sozinhas ("oi", "olá", "hello") e perguntas sobre o próprio assistente ("quem \
