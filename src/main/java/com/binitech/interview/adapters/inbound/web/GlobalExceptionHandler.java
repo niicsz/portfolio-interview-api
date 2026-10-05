@@ -10,9 +10,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -39,6 +41,17 @@ public class GlobalExceptionHandler {
   @ExceptionHandler(HttpMediaTypeNotSupportedException.class)
   public ResponseEntity<ErrorDTO> handleMediaType(HttpMediaTypeNotSupportedException e) {
     return error(HttpStatus.UNSUPPORTED_MEDIA_TYPE, "Use Content-Type: application/json.");
+  }
+
+  @ExceptionHandler(NoResourceFoundException.class)
+  public ResponseEntity<ErrorDTO> handleNotFound(NoResourceFoundException e) {
+    return error(HttpStatus.NOT_FOUND, "Recurso não encontrado.");
+  }
+
+  @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+  public ResponseEntity<ErrorDTO> handleMethodNotSupported(
+      HttpRequestMethodNotSupportedException e) {
+    return error(HttpStatus.METHOD_NOT_ALLOWED, "Método não permitido.");
   }
 
   @ExceptionHandler(LanguageModelUnavailableException.class)

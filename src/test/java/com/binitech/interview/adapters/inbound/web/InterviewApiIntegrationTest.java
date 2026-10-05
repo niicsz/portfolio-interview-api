@@ -4,6 +4,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.options;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
@@ -119,6 +120,22 @@ class InterviewApiIntegrationTest {
                 .header("Origin", "https://evil.example.com")
                 .header("Access-Control-Request-Method", "POST"))
         .andExpect(status().isForbidden());
+  }
+
+  @Test
+  void mapsUnknownPathTo404() throws Exception {
+    mockMvc
+        .perform(get("/"))
+        .andExpect(status().isNotFound())
+        .andExpect(jsonPath("$.status").value(404));
+  }
+
+  @Test
+  void mapsUnsupportedMethodTo405() throws Exception {
+    mockMvc
+        .perform(get("/api/interview/questions"))
+        .andExpect(status().isMethodNotAllowed())
+        .andExpect(jsonPath("$.status").value(405));
   }
 
   private MockHttpServletRequestBuilder ask(String body, String forwardedFor) {
