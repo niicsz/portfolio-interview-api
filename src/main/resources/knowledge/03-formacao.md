@@ -2,7 +2,7 @@
 
 ## MBA em Engenharia de Software – USP
 
-Cursa MBA em Engenharia de Software na Universidade de São Paulo (USP), iniciado em 2026 e em andamento.
+Cursa MBA em Engenharia de Software na Universidade de São Paulo (USP), em andamento: iniciado em agosto de 2026, com conclusão prevista para o segundo semestre de 2028.
 
 ## Tecnólogo em Análise e Desenvolvimento de Sistemas – São Judas
 
