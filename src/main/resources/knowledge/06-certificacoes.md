@@ -4,6 +4,8 @@
 
 Estas são as certificações do Nicolas, obtidas por prova ou avaliação:
 
+- Angular (Intermediate) Certificate, pela HackerRank, em outubro de 2026. Cobre roteamento, NgModules, Observables para transmissão de dados e tratamento de eventos, injeção de dependência e consumo de APIs.
+- Software Engineer Certificate, pela HackerRank, em outubro de 2026. Cobre resolução de problemas, SQL e REST API (competências: Problem Solving, Java).
 - GH-300 GitHub Copilot, emitida pelo GitHub em maio de 2026.
 - AZ-900 Microsoft Certified: Azure Fundamentals, pela Microsoft, em junho de 2025.
 - Databricks Fundamentals Accreditation, pela Databricks, em maio de 2025.
@@ -21,6 +23,7 @@ Cursos concluídos (são cursos, não certificações):
 
 Cursos concluídos (são cursos, não certificações):
 
+- Trilha Arquitetura Java, no The Developer's Conference (TDC), em setembro de 2026.
 - Red Hat Application Development I: Programming in Java EE, pela Red Hat, em março de 2026.
 - Batismo de Java, pela Java10x, em janeiro de 2026.
 - Formação Boas Práticas em Java, pela Alura, em junho de 2025.
