@@ -2,7 +2,7 @@
 
 ## Cargo e período
 
-Nicolas é Junior Software Engineer no Bradesco desde fevereiro de 2025, no modelo híbrido, em Osasco (SP). Passou por três squads: Btoken, DocMatch e, atualmente, Bex for Dev.
+Nicolas é Software Engineer I no Bradesco desde fevereiro de 2025, no modelo híbrido, em Osasco (SP). Passou por três squads: Btoken, DocMatch e, atualmente, Bex for Dev.
 
 ## Btoken – Token Corporativo do Bradesco
 
@@ -18,10 +18,10 @@ Trabalhou com MongoDB e SQL Server para armazenamento e correlação de dados, s
 
 ## Squad Bex for Dev – Platform Engineering
 
-Atualmente faz parte da squad Bex for Dev, em Platform Engineering com o Backstage (Internal Developer Platform), apoiando iniciativas de experiência do desenvolvedor (DX) que impactam mais de 500 devs internos. O dia a dia inclui Linux via WSL (RHEL), containers com Podman e Docker e scripts Shell para automação.
+Atualmente faz parte da squad Bex for Dev, em Platform Engineering com o Backstage (Internal Developer Platform), apoiando iniciativas de experiência do desenvolvedor (DX) que impactam mais de 500 devs internos. O dia a dia inclui Linux Red Hat (RHEL), tanto em notebooks quanto via WSL, containers com Podman e Docker e scripts Shell para automação.
 
 ## Bex for Dev – Linux Red Hat, external images e Bex Dev Local
 
-Na Bex for Dev, Nicolas dá suporte ao piloto de adoção do Linux Red Hat no banco, que permite aos devs escolher entre Linux e Windows no onboarding. Trabalhou na oferta de external images, viabilizando o uso de imagens do Docker Hub livres de CVEs e reduzindo o tempo de provisionamento em cerca de 60%.
+Na Bex for Dev, Nicolas dá suporte ao piloto de adoção do Linux Red Hat no banco, tanto em notebooks com RHEL quanto via WSL, que permite aos devs escolher entre Linux e Windows no onboarding. Trabalhou na oferta de external images, viabilizando o uso de imagens do Docker Hub livres de CVEs e reduzindo o tempo de provisionamento em cerca de 60%.
 
 Habilitou o GitHub Copilot CLI nas distros Red Hat via WSL e criou o "Bex Dev Local", um script que automatiza setup, build e start do projeto, reduzindo a configuração de ambiente de horas para cerca de 10 minutos.
