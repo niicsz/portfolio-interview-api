@@ -1,0 +1,9 @@
+
+        _  _
+ _ __  (_)(_)  ___  ___  ____
+| '_ \ | || | / __|/ __||_  /
+| | | || || || (__ \__ \ / /
+|_| |_||_||_| \___||___//___|
+
+ :: ${spring.application.name} :: github.com/niicsz :: Spring Boot${spring-boot.formatted-version}
+
