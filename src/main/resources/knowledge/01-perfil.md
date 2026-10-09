@@ -4,7 +4,7 @@
 
 Nicolas Bezerra Bini é engenheiro de software com foco em back-end Java e Spring Boot. Trabalha no Bradesco como Software Engineer I desde fevereiro de 2025, construindo serviços para sistemas bancários: uma plataforma de OTP com mais de 2 milhões de requisições por dia, validação de documentos no onboarding de clientes e uma plataforma interna de desenvolvimento usada por mais de 500 desenvolvedores.
 
-No dia a dia usa Apache Kafka, SQL Server, MongoDB, Azure, Docker e Linux. Tem certificação Microsoft Azure Fundamentals (AZ-900). Fora do back-end, também trabalha com Angular e TypeScript em projetos pessoais.
+No dia a dia usa Apache Kafka, SQL Server, MongoDB, Azure, Docker e Linux. Tem as certificações Microsoft Azure Fundamentals (AZ-900), GitHub Foundations (GH-900) e GitHub Copilot (GH-300). Fora do back-end, também trabalha com Angular e TypeScript em projetos pessoais.
 
 ## Forma de trabalhar
 

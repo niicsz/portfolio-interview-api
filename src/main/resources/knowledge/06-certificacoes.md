@@ -4,9 +4,10 @@
 
 Estas são as certificações do Nicolas, obtidas por prova ou avaliação:
 
+- GH-900 Microsoft Certified: GitHub Foundations, pela Microsoft, em outubro de 2026. Cobre fundamentos de Git e GitHub, repositórios, colaboração com issues e pull requests, GitHub Actions, segurança e administração.
 - Angular (Intermediate) Certificate, pela HackerRank, em outubro de 2026. Cobre roteamento, NgModules, Observables para transmissão de dados e tratamento de eventos, injeção de dependência e consumo de APIs.
 - Software Engineer Certificate, pela HackerRank, em outubro de 2026. Cobre resolução de problemas, SQL e REST API (competências: Problem Solving, Java).
-- GH-300 GitHub Copilot, emitida pelo GitHub em maio de 2026.
+- GH-300 GitHub Copilot, pela Microsoft, em maio de 2026.
 - AZ-900 Microsoft Certified: Azure Fundamentals, pela Microsoft, em junho de 2025.
 - Databricks Fundamentals Accreditation, pela Databricks, em maio de 2025.
 - Java (Basic) Certificate, pela HackerRank, em outubro de 2024.
