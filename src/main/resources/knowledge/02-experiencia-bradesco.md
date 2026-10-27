@@ -6,7 +6,7 @@ Nicolas é Software Engineer I no Bradesco desde fevereiro de 2025, no modelo h�
 
 ## Btoken – Token Corporativo do Bradesco
 
-Na primeira squad, atuou no Btoken, o serviço de autenticação e token corporativo do Bradesco: um sistema de geração de OTP usado em múltiplos canais bancários, que processa mais de 2 milhões de requisições por dia e atende milhões de usuários. Entregou mais de 20 novas funcionalidades no serviço, reforçando a segurança e melhorando a experiência dos usuários.
+Na primeira squad, atuou no Btoken, o serviço de autenticação e token corporativo do Bradesco: um sistema de geração de OTP usado em múltiplos canais bancários, que atende milhões de usuários. Entregou mais de 20 novas funcionalidades no serviço, reforçando a segurança e melhorando a experiência dos usuários.
 
 Melhorou em 500% a performance do serviço de autenticação: analisou e otimizou consultas no SQL Server que eram prejudicadas pelo tratamento ineficiente de VARCHAR.
 
