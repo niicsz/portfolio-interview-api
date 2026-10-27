@@ -6,9 +6,17 @@ Nicolas é Software Engineer I no Bradesco desde fevereiro de 2025, no modelo h�
 
 ## Btoken – Token Corporativo do Bradesco
 
-Na primeira squad, atuou no Btoken, o token corporativo do Bradesco: um sistema de geração de OTP usado em múltiplos canais bancários, que processa mais de 2 milhões de requisições por dia. Contribuiu para o desenvolvimento e a manutenção do sistema.
+Na primeira squad, atuou no Btoken, o serviço de autenticação e token corporativo do Bradesco: um sistema de geração de OTP usado em múltiplos canais bancários, que processa mais de 2 milhões de requisições por dia e atende milhões de usuários. Entregou mais de 20 novas funcionalidades no serviço, reforçando a segurança e melhorando a experiência dos usuários.
 
-Construiu microsserviços com Spring Boot e APIs REST documentadas com Swagger/OpenAPI. Implementou testes com JUnit 5 e Mockito, alcançando 95% de cobertura no SonarQube. Usou Apache Kafka para mensageria, Azure para nuvem, SQL Server para persistência e Databricks para análise de dados.
+Melhorou em 500% a performance do serviço de autenticação: analisou e otimizou consultas no SQL Server que eram prejudicadas pelo tratamento ineficiente de VARCHAR.
+
+Projetou e manteve integrações orientadas a eventos com Apache Kafka, garantindo comunicação confiável entre serviços distribuídos.
+
+Atuou no suporte L3: diagnosticava incidentes em produção, fazia análise de causa raiz e implementava correções definitivas para manter a alta disponibilidade do serviço.
+
+Integrou o Source Formatter ao pipeline de CI/CD, melhorando a qualidade, a manutenibilidade e a padronização do código do time. Também liderou melhorias no fluxo de trabalho, com práticas melhores de gestão de tarefas que aumentaram a eficiência do time e a previsibilidade das entregas.
+
+Construiu microsserviços com Spring Boot e APIs REST documentadas com Swagger/OpenAPI. Implementou testes com JUnit 5 e Mockito, alcançando 95% de cobertura no SonarQube. Usou Azure para nuvem, SQL Server para persistência e Databricks para análise de dados.
 
 ## Squad DocMatch – Análise de Documentos
 
