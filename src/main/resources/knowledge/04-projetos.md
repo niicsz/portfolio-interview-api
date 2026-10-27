@@ -22,7 +22,11 @@ API REST para consulta de CEPs com abordagem API first, padrões de resiliência
 
 ## URL Shortener
 
-Encurtador de URLs rápido e escalável construído com Java e banco de dados relacional. Repositório: github.com/niicsz/url-shortener.
+API de encurtador de URLs em Java 21 e Spring Boot com arquitetura hexagonal e abordagem API first (OpenAPI). Usa Cassandra como store principal, Redis para gerar IDs com contador atômico e para cache-aside, e Hashids/Base62 para códigos curtos sem colisão. O usuário pode escolher uma palavra personalizada no lugar do código gerado; a gravação usa INSERT IF NOT EXISTS do Cassandra para não sobrescrever links existentes. Contagem de cliques assíncrona. Repositório: github.com/niicsz/url-shortener-backend.
+
+## URL Shortener Frontend
+
+SPA em Angular 21 do encurtador de URLs, servida por nginx, com campo de palavra personalizada, links recentes e painel de cliques. Repositório: github.com/niicsz/url-shortener-frontend.
 
 ## Portfolio Interview API
 
